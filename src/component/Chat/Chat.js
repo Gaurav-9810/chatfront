@@ -54,17 +54,18 @@ const Chat = () => {
             };
           }, []);
 
- useEffect(() => {
-   socket.on('sendMessage',(data)=>{
-      setmessages([...messages,data]);
-
-      console.log(data.user , data.message, data.id);
-   })
- 
-   return () => {
-     socket.off();
-   }
- },[messages])
+          useEffect(() => {
+            const handleReceiveMessage = (data) => {
+              setmessages((prevMessages) => [...prevMessages, data]);
+              console.log(data.user, data.message, data.id);
+            };
+          
+            socket.on('sendMessage', handleReceiveMessage);
+          
+            return () => {
+              socket.off('sendMessage', handleReceiveMessage);
+            };
+          }, []);
  
 
  const close=()=>{
@@ -102,5 +103,4 @@ const Chat = () => {
     </div>
   )
 }
-
 export default Chat

@@ -6,7 +6,7 @@ import Message from '../Message/Message';
 import ReactScrollToBottom from 'react-scroll-to-bottom'
 import { useNavigate } from 'react-router-dom';
 
-const ENDPOINT = 'http://localhost:5000';
+const ENDPOINT = 'https://hintapp.onrender.com/';
 let socket;
 
 

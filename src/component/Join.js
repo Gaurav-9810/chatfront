@@ -12,6 +12,7 @@ const Join = () => {
        window.alert('pls fill the name')
       return;} 
     user=name;
+    localStorage.setItem('name',user);
     setname('');
     // console.log(user);
    Navigate('/chat');

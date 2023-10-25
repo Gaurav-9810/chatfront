@@ -55,10 +55,10 @@ const Chat = () => {
               console.log(data.user, data.message);
             })
         
-            socket.on('leave', (data) => {
-              setmessages((prevMessages) => [...prevMessages, data]);
-              console.log(data.user, data.message);
-            })
+            // socket.on('leave', (data) => {
+            //   setmessages((prevMessages) => [...prevMessages, data]);
+            //   console.log(data.user, data.message);
+            // })
         
             return () => {
               socket.off();

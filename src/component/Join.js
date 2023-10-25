@@ -7,12 +7,12 @@ const Join = () => {
  
 
   let Navigate=useNavigate();
-  const handellogin=()=>{
+  const handellogin=async()=>{
     if(name===''){
        window.alert('pls fill the name')
       return;} 
     user=name;
-    localStorage.setItem('name',user);
+   await localStorage.setItem('name',user);
     setname('');
     // console.log(user);
    Navigate('/chat');

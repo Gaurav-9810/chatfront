@@ -32,6 +32,7 @@ const Chat = () => {
 
        socket=socketIo(ENDPOINT,{transports:['websocket']});
        useEffect(() => {
+        name=localStorage.getItem('name');
             socket.on('connect', () => {
               alert('connected');
               setid(socket.id);

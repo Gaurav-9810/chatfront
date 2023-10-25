@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 const ENDPOINT = 'https://hintapp.onrender.com/';
 let socket;
-const name=localStorage.getItem('name');
+let name=localStorage.getItem('name');
 console.log(name+"loaclstorage");
 
 
